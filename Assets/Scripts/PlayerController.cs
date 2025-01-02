@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         playerRb.AddRelativeForce(Vector3.forward * horsePower * verticalInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
-        speed = Mathf.RoundToInt(playerRb.velocity.magnitude * 3.6f);
+        speed = Mathf.RoundToInt(playerRb.linearVelocity.magnitude * 3.6f);
         speedometerText.SetText("Speed: " + speed + " kph");
 
         rpm = (speed % 30) * 40;
